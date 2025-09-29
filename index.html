@@ -10,6 +10,7 @@
         <link rel="stylesheet" href="css/L.Control.Layers.Tree.css">
         <link rel="stylesheet" href="css/qgis2web.css">
         <link rel="stylesheet" href="css/fontawesome-all.min.css">
+        <link rel="stylesheet" href="css/leaflet-search.css">
         <link rel="stylesheet" href="css/leaflet.photon.css">
         <link rel="stylesheet" href="css/leaflet-measure.css">
         <style>
@@ -37,8 +38,9 @@
         <script src="js/labels.js"></script>
         <script src="js/leaflet.photon.js"></script>
         <script src="js/leaflet-measure.js"></script>
-        <script src="data/Batas_Kabupaten_kota1_1.js"></script>
-        <script src="data/risikobencana_2.js"></script>
+        <script src="js/leaflet-search.js"></script>
+        <script src="data/BatasKabupatenKota_1.js"></script>
+        <script src="data/RisikoBencana_2.js"></script>
         <script src="data/ZonaGunungApi_3.js"></script>
         <script src="data/JaringanJalan_4.js"></script>
         <script src="data/SebaranCagarBudayaJatim_5.js"></script>
@@ -61,7 +63,7 @@
         }
         var map = L.map('map', {
             zoomControl:false, maxZoom:28, minZoom:1
-        }).fitBounds([[-8.676478428672874,110.97971143860694],[-6.949495281053941,114.53141344145932]]);
+        }).fitBounds([[-9.672239426908526,110.92244910857511],[-6.21978995662785,116.84400426757685]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -153,7 +155,7 @@
         });
         layer_GoogleSatellite_0;
         map.addLayer(layer_GoogleSatellite_0);
-        function pop_Batas_Kabupaten_kota1_1(feature, layer) {
+        function pop_BatasKabupatenKota_1(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (var i in e.target._eventParents) {
@@ -188,9 +190,9 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_Batas_Kabupaten_kota1_1_0() {
+        function style_BatasKabupatenKota_1_0() {
             return {
-                pane: 'pane_Batas_Kabupaten_kota1_1',
+                pane: 'pane_BatasKabupatenKota_1',
                 opacity: 1,
                 color: 'rgba(222,205,205,1.0)',
                 dashArray: '1.0,2.0',
@@ -201,21 +203,21 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_Batas_Kabupaten_kota1_1');
-        map.getPane('pane_Batas_Kabupaten_kota1_1').style.zIndex = 401;
-        map.getPane('pane_Batas_Kabupaten_kota1_1').style['mix-blend-mode'] = 'normal';
-        var layer_Batas_Kabupaten_kota1_1 = new L.geoJson(json_Batas_Kabupaten_kota1_1, {
+        map.createPane('pane_BatasKabupatenKota_1');
+        map.getPane('pane_BatasKabupatenKota_1').style.zIndex = 401;
+        map.getPane('pane_BatasKabupatenKota_1').style['mix-blend-mode'] = 'normal';
+        var layer_BatasKabupatenKota_1 = new L.geoJson(json_BatasKabupatenKota_1, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_Batas_Kabupaten_kota1_1',
-            layerName: 'layer_Batas_Kabupaten_kota1_1',
-            pane: 'pane_Batas_Kabupaten_kota1_1',
-            onEachFeature: pop_Batas_Kabupaten_kota1_1,
-            style: style_Batas_Kabupaten_kota1_1_0,
+            dataVar: 'json_BatasKabupatenKota_1',
+            layerName: 'layer_BatasKabupatenKota_1',
+            pane: 'pane_BatasKabupatenKota_1',
+            onEachFeature: pop_BatasKabupatenKota_1,
+            style: style_BatasKabupatenKota_1_0,
         });
-        bounds_group.addLayer(layer_Batas_Kabupaten_kota1_1);
-        map.addLayer(layer_Batas_Kabupaten_kota1_1);
-        function pop_risikobencana_2(feature, layer) {
+        bounds_group.addLayer(layer_BatasKabupatenKota_1);
+        map.addLayer(layer_BatasKabupatenKota_1);
+        function pop_RisikoBencana_2(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (var i in e.target._eventParents) {
@@ -250,11 +252,11 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_risikobencana_2_0(feature) {
+        function style_RisikoBencana_2_0(feature) {
             switch(String(feature.properties['layer'])) {
                 case 'Risiko_Banjir':
                     return {
-                pane: 'pane_risikobencana_2',
+                pane: 'pane_RisikoBencana_2',
                 stroke: false, 
                 fill: true,
                 fillOpacity: 1,
@@ -264,7 +266,7 @@
                     break;
                 case 'Risiko_Banjir_Bandang':
                     return {
-                pane: 'pane_risikobencana_2',
+                pane: 'pane_RisikoBencana_2',
                 stroke: false, 
                 fill: true,
                 fillOpacity: 1,
@@ -274,7 +276,7 @@
                     break;
                 case 'Risiko_Gempa':
                     return {
-                pane: 'pane_risikobencana_2',
+                pane: 'pane_RisikoBencana_2',
                 stroke: false, 
                 fill: true,
                 fillOpacity: 1,
@@ -284,7 +286,7 @@
                     break;
                 case 'Risiko_Likuifaksi':
                     return {
-                pane: 'pane_risikobencana_2',
+                pane: 'pane_RisikoBencana_2',
                 stroke: false, 
                 fill: true,
                 fillOpacity: 1,
@@ -294,7 +296,7 @@
                     break;
                 case 'Risiko_Longsor':
                     return {
-                pane: 'pane_risikobencana_2',
+                pane: 'pane_RisikoBencana_2',
                 stroke: false, 
                 fill: true,
                 fillOpacity: 1,
@@ -304,20 +306,20 @@
                     break;
             }
         }
-        map.createPane('pane_risikobencana_2');
-        map.getPane('pane_risikobencana_2').style.zIndex = 402;
-        map.getPane('pane_risikobencana_2').style['mix-blend-mode'] = 'normal';
-        var layer_risikobencana_2 = new L.geoJson(json_risikobencana_2, {
+        map.createPane('pane_RisikoBencana_2');
+        map.getPane('pane_RisikoBencana_2').style.zIndex = 402;
+        map.getPane('pane_RisikoBencana_2').style['mix-blend-mode'] = 'normal';
+        var layer_RisikoBencana_2 = new L.geoJson(json_RisikoBencana_2, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_risikobencana_2',
-            layerName: 'layer_risikobencana_2',
-            pane: 'pane_risikobencana_2',
-            onEachFeature: pop_risikobencana_2,
-            style: style_risikobencana_2_0,
+            dataVar: 'json_RisikoBencana_2',
+            layerName: 'layer_RisikoBencana_2',
+            pane: 'pane_RisikoBencana_2',
+            onEachFeature: pop_RisikoBencana_2,
+            style: style_RisikoBencana_2_0,
         });
-        bounds_group.addLayer(layer_risikobencana_2);
-        map.addLayer(layer_risikobencana_2);
+        bounds_group.addLayer(layer_RisikoBencana_2);
+        map.addLayer(layer_RisikoBencana_2);
         function pop_ZonaGunungApi_3(feature, layer) {
             layer.on({
                 mouseout: function(e) {
@@ -537,6 +539,10 @@
                         <th scope="row">Kategori</th>\
                         <td>' + (feature.properties['Kategori'] !== null ? autolinker.link(String(feature.properties['Kategori']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
+                    <tr>\
+                        <th scope="row">Gambar</th>\
+                        <td>' + (feature.properties['Gambar'] !== null ? autolinker.link(String(feature.properties['Gambar']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
 			layer.on('popupopen', function(e) {
@@ -581,8 +587,8 @@
             {label: '<img src="legend/SebaranCagarBudayaJatim_5.png" /> Sebaran Cagar Budaya Jatim', layer: layer_SebaranCagarBudayaJatim_5},
             {label: 'Jaringan Jalan<br /><table><tr><td style="text-align: center;"><img src="legend/JaringanJalan_4_JalanArteri0.png" /></td><td>Jalan Arteri</td></tr><tr><td style="text-align: center;"><img src="legend/JaringanJalan_4_JalanProvinsi1.png" /></td><td>Jalan Provinsi</td></tr></table>', layer: layer_JaringanJalan_4},
             {label: 'Zona Gunung Api<br /><table><tr><td style="text-align: center;"><img src="legend/ZonaGunungApi_3_Normal0.png" /></td><td>Normal</td></tr><tr><td style="text-align: center;"><img src="legend/ZonaGunungApi_3_Waspada1.png" /></td><td>Waspada</td></tr></table>', layer: layer_ZonaGunungApi_3},
-            {label: 'risiko bencana<br /><table><tr><td style="text-align: center;"><img src="legend/risikobencana_2_RisikoBanjir0.png" /></td><td>Risiko_Banjir</td></tr><tr><td style="text-align: center;"><img src="legend/risikobencana_2_RisikoBanjirBandang1.png" /></td><td>Risiko_Banjir_Bandang</td></tr><tr><td style="text-align: center;"><img src="legend/risikobencana_2_RisikoGempa2.png" /></td><td>Risiko_Gempa</td></tr><tr><td style="text-align: center;"><img src="legend/risikobencana_2_RisikoLikuifaksi3.png" /></td><td>Risiko_Likuifaksi</td></tr><tr><td style="text-align: center;"><img src="legend/risikobencana_2_RisikoLongsor4.png" /></td><td>Risiko_Longsor</td></tr></table>', layer: layer_risikobencana_2},
-            {label: '<img src="legend/Batas_Kabupaten_kota1_1.png" /> Batas_Kabupaten_kota1', layer: layer_Batas_Kabupaten_kota1_1},
+            {label: 'Risiko Bencana<br /><table><tr><td style="text-align: center;"><img src="legend/RisikoBencana_2_RisikoBanjir0.png" /></td><td>Risiko_Banjir</td></tr><tr><td style="text-align: center;"><img src="legend/RisikoBencana_2_RisikoBanjirBandang1.png" /></td><td>Risiko_Banjir_Bandang</td></tr><tr><td style="text-align: center;"><img src="legend/RisikoBencana_2_RisikoGempa2.png" /></td><td>Risiko_Gempa</td></tr><tr><td style="text-align: center;"><img src="legend/RisikoBencana_2_RisikoLikuifaksi3.png" /></td><td>Risiko_Likuifaksi</td></tr><tr><td style="text-align: center;"><img src="legend/RisikoBencana_2_RisikoLongsor4.png" /></td><td>Risiko_Longsor</td></tr></table>', layer: layer_RisikoBencana_2},
+            {label: '<img src="legend/BatasKabupatenKota_1.png" /> Batas Kabupaten/Kota', layer: layer_BatasKabupatenKota_1},
             {label: "Google Satellite", layer: layer_GoogleSatellite_0, radioGroup: 'bm' },]
         var lay = L.control.layers.tree(null, overlaysTree,{
             //namedToggle: true,
@@ -595,15 +601,25 @@
         });
         lay.addTo(map);
         setBounds();
-        resetLabels([layer_Batas_Kabupaten_kota1_1]);
+        map.addControl(new L.Control.Search({
+            layer: layer_SebaranCagarBudayaJatim_5,
+            initial: false,
+            hideMarkerOnCollapse: true,
+            propertyName: 'OBJEK'}));
+        if (typeof url === 'undefined') {
+            document.getElementsByClassName('search-button')[0].className += ' fa fa-binoculars';
+        } else {
+            document.getElementsByClassName('search-button')[1].className += ' fa fa-binoculars';
+        }
+        resetLabels([layer_BatasKabupatenKota_1]);
         map.on("zoomend", function(){
-            resetLabels([layer_Batas_Kabupaten_kota1_1]);
+            resetLabels([layer_BatasKabupatenKota_1]);
         });
         map.on("layeradd", function(){
-            resetLabels([layer_Batas_Kabupaten_kota1_1]);
+            resetLabels([layer_BatasKabupatenKota_1]);
         });
         map.on("layerremove", function(){
-            resetLabels([layer_Batas_Kabupaten_kota1_1]);
+            resetLabels([layer_BatasKabupatenKota_1]);
         });
         </script>
     </body>
