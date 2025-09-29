@@ -21,7 +21,7 @@
             margin: 0;
         }
         </style>
-        <title>Sebaran Cagar Budaya tingkat Provinsi di Jawa Timur</title>
+        <title>Sebaran Cagar Budaya Tingkat Provinsi di Jawa Timur</title>
     </head>
     <body>
         <div id="map">
@@ -63,7 +63,7 @@
         }
         var map = L.map('map', {
             zoomControl:false, maxZoom:28, minZoom:1
-        }).fitBounds([[-9.672239426908526,110.92244910857511],[-6.21978995662785,116.84400426757685]]);
+        }).fitBounds([[-9.672239426908526,110.59790233543752],[-6.2197899566278485,117.16855104071445]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -102,7 +102,7 @@
             return this._div;
         };
         title.update = function () {
-            this._div.innerHTML = '<h2>Sebaran Cagar Budaya tingkat Provinsi di Jawa Timur</h2>';
+            this._div.innerHTML = '<h2>Sebaran Cagar Budaya Tingkat Provinsi di Jawa Timur</h2>';
         };
         title.addTo(map);
         var abstract = new L.Control({'position':'topright'});
@@ -123,7 +123,7 @@
             abstract.show = function () {
                 this._div.classList.remove("abstract");
                 this._div.classList.add("abstractUncollapsed");
-                this._div.innerHTML = 'Peta ini menampilkan lokasi Cagar Budaya peringkat Provinsi Jawa Timur yang dilengkapi dengan data pendukung berupa jaringan jalan, batas administrasi kabupaten/kota, serta overlay kawasan risiko bencana (gempa bumi, banjir, banjir bandang, likuifaksi, dan longsor) dan zona rawan gunung api.<br /><br />Penyusunan peta dilakukan melalui pengolahan Sistem Informasi Geografis (SIG) dengan menggunakan data dari Dinas Kebudayaan dan Pariwisata Provinsi Jawa Timur, Dinas Pekerjaan Umum Provinsi Jawa Timur, serta Pusat Vulkanologi dan Mitigasi Bencana Geologi.';
+                this._div.innerHTML = 'Peta ini menampilkan lokasi Cagar Budaya peringkat Provinsi Jawa Timur yang dilengkapi dengan data pendukung berupa jaringan jalan, batas administrasi kabupaten/kota, serta overlay kawasan risiko bencana (gempa bumi, banjir, banjir bandang, likuifaksi, dan longsor) dan zona rawan gunung api.<br />Penyusunan peta dilakukan melalui pengolahan Sistem Informasi Geografis (SIG) dengan menggunakan data dari Dinas Kebudayaan dan Pariwisata Provinsi Jawa Timur, Dinas Pekerjaan Umum Provinsi Jawa Timur, serta Pusat Vulkanologi dan Mitigasi Bencana Geologi.';
         };
         abstract.addTo(map);
         var zoomControl = L.control.zoom({
@@ -520,9 +520,6 @@
                 mouseover: highlightFeature,
             });
             var popupContent = '<table>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['NO'] !== null ? autolinker.link(String(feature.properties['NO']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
                     <tr>\
                         <th scope="row">OBJEK</th>\
                         <td>' + (feature.properties['OBJEK'] !== null ? autolinker.link(String(feature.properties['OBJEK']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
