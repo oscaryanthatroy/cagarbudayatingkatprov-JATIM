@@ -10,7 +10,6 @@
         <link rel="stylesheet" href="css/L.Control.Layers.Tree.css">
         <link rel="stylesheet" href="css/qgis2web.css">
         <link rel="stylesheet" href="css/fontawesome-all.min.css">
-        <link rel="stylesheet" href="css/leaflet-search.css">
         <link rel="stylesheet" href="css/leaflet.photon.css">
         <link rel="stylesheet" href="css/leaflet-measure.css">
         <style>
@@ -38,12 +37,11 @@
         <script src="js/labels.js"></script>
         <script src="js/leaflet.photon.js"></script>
         <script src="js/leaflet-measure.js"></script>
-        <script src="js/leaflet-search.js"></script>
         <script src="data/Batas_Kabupaten_kota1_1.js"></script>
         <script src="data/risikobencana_2.js"></script>
         <script src="data/ZonaGunungApi_3.js"></script>
         <script src="data/JaringanJalan_4.js"></script>
-        <script src="data/Sebaran_CB_Jatim_5.js"></script>
+        <script src="data/SebaranCagarBudayaJatim_5.js"></script>
         <script>
         var highlightLayer;
         function highlightFeature(e) {
@@ -501,7 +499,7 @@
         });
         bounds_group.addLayer(layer_JaringanJalan_4);
         map.addLayer(layer_JaringanJalan_4);
-        function pop_Sebaran_CB_Jatim_5(feature, layer) {
+        function pop_SebaranCagarBudayaJatim_5(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (var i in e.target._eventParents) {
@@ -524,16 +522,20 @@
                         <td colspan="2">' + (feature.properties['NO'] !== null ? autolinker.link(String(feature.properties['NO']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['OBJEK'] !== null ? autolinker.link(String(feature.properties['OBJEK']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <th scope="row">OBJEK</th>\
+                        <td>' + (feature.properties['OBJEK'] !== null ? autolinker.link(String(feature.properties['OBJEK']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['X'] !== null ? autolinker.link(String(feature.properties['X']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <th scope="row">X</th>\
+                        <td>' + (feature.properties['X'] !== null ? autolinker.link(String(feature.properties['X']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['Y'] !== null ? autolinker.link(String(feature.properties['Y']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <th scope="row">Y</th>\
+                        <td>' + (feature.properties['Y'] !== null ? autolinker.link(String(feature.properties['Y']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['Kategori'] !== null ? autolinker.link(String(feature.properties['Kategori']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <th scope="row">Kategori</th>\
+                        <td>' + (feature.properties['Kategori'] !== null ? autolinker.link(String(feature.properties['Kategori']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
@@ -543,40 +545,40 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_Sebaran_CB_Jatim_5_0() {
+        function style_SebaranCagarBudayaJatim_5_0() {
             return {
-                pane: 'pane_Sebaran_CB_Jatim_5',
+                pane: 'pane_SebaranCagarBudayaJatim_5',
         rotationAngle: 0.0,
         rotationOrigin: 'center center',
         icon: L.icon({
-            iconUrl: 'markers/Sebaran_CB_Jatim_5.svg',
+            iconUrl: 'markers/SebaranCagarBudayaJatim_5.svg',
             iconSize: [19.0, 19.0]
         }),
                 interactive: true,
             }
         }
-        map.createPane('pane_Sebaran_CB_Jatim_5');
-        map.getPane('pane_Sebaran_CB_Jatim_5').style.zIndex = 405;
-        map.getPane('pane_Sebaran_CB_Jatim_5').style['mix-blend-mode'] = 'normal';
-        var layer_Sebaran_CB_Jatim_5 = new L.geoJson(json_Sebaran_CB_Jatim_5, {
+        map.createPane('pane_SebaranCagarBudayaJatim_5');
+        map.getPane('pane_SebaranCagarBudayaJatim_5').style.zIndex = 405;
+        map.getPane('pane_SebaranCagarBudayaJatim_5').style['mix-blend-mode'] = 'normal';
+        var layer_SebaranCagarBudayaJatim_5 = new L.geoJson(json_SebaranCagarBudayaJatim_5, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_Sebaran_CB_Jatim_5',
-            layerName: 'layer_Sebaran_CB_Jatim_5',
-            pane: 'pane_Sebaran_CB_Jatim_5',
-            onEachFeature: pop_Sebaran_CB_Jatim_5,
+            dataVar: 'json_SebaranCagarBudayaJatim_5',
+            layerName: 'layer_SebaranCagarBudayaJatim_5',
+            pane: 'pane_SebaranCagarBudayaJatim_5',
+            onEachFeature: pop_SebaranCagarBudayaJatim_5,
             pointToLayer: function (feature, latlng) {
                 var context = {
                     feature: feature,
                     variables: {}
                 };
-                return L.marker(latlng, style_Sebaran_CB_Jatim_5_0(feature));
+                return L.marker(latlng, style_SebaranCagarBudayaJatim_5_0(feature));
             },
         });
-        bounds_group.addLayer(layer_Sebaran_CB_Jatim_5);
-        map.addLayer(layer_Sebaran_CB_Jatim_5);
+        bounds_group.addLayer(layer_SebaranCagarBudayaJatim_5);
+        map.addLayer(layer_SebaranCagarBudayaJatim_5);
         var overlaysTree = [
-            {label: '<img src="legend/Sebaran_CB_Jatim_5.png" /> Sebaran_CB_Jatim', layer: layer_Sebaran_CB_Jatim_5},
+            {label: '<img src="legend/SebaranCagarBudayaJatim_5.png" /> Sebaran Cagar Budaya Jatim', layer: layer_SebaranCagarBudayaJatim_5},
             {label: 'Jaringan Jalan<br /><table><tr><td style="text-align: center;"><img src="legend/JaringanJalan_4_JalanArteri0.png" /></td><td>Jalan Arteri</td></tr><tr><td style="text-align: center;"><img src="legend/JaringanJalan_4_JalanProvinsi1.png" /></td><td>Jalan Provinsi</td></tr></table>', layer: layer_JaringanJalan_4},
             {label: 'Zona Gunung Api<br /><table><tr><td style="text-align: center;"><img src="legend/ZonaGunungApi_3_Normal0.png" /></td><td>Normal</td></tr><tr><td style="text-align: center;"><img src="legend/ZonaGunungApi_3_Waspada1.png" /></td><td>Waspada</td></tr></table>', layer: layer_ZonaGunungApi_3},
             {label: 'risiko bencana<br /><table><tr><td style="text-align: center;"><img src="legend/risikobencana_2_RisikoBanjir0.png" /></td><td>Risiko_Banjir</td></tr><tr><td style="text-align: center;"><img src="legend/risikobencana_2_RisikoBanjirBandang1.png" /></td><td>Risiko_Banjir_Bandang</td></tr><tr><td style="text-align: center;"><img src="legend/risikobencana_2_RisikoGempa2.png" /></td><td>Risiko_Gempa</td></tr><tr><td style="text-align: center;"><img src="legend/risikobencana_2_RisikoLikuifaksi3.png" /></td><td>Risiko_Likuifaksi</td></tr><tr><td style="text-align: center;"><img src="legend/risikobencana_2_RisikoLongsor4.png" /></td><td>Risiko_Longsor</td></tr></table>', layer: layer_risikobencana_2},
@@ -593,16 +595,6 @@
         });
         lay.addTo(map);
         setBounds();
-        map.addControl(new L.Control.Search({
-            layer: layer_Sebaran_CB_Jatim_5,
-            initial: false,
-            hideMarkerOnCollapse: true,
-            propertyName: 'OBJEK'}));
-        if (typeof url === 'undefined') {
-            document.getElementsByClassName('search-button')[0].className += ' fa fa-binoculars';
-        } else {
-            document.getElementsByClassName('search-button')[1].className += ' fa fa-binoculars';
-        }
         resetLabels([layer_Batas_Kabupaten_kota1_1]);
         map.on("zoomend", function(){
             resetLabels([layer_Batas_Kabupaten_kota1_1]);
