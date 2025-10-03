@@ -21,7 +21,7 @@
             margin: 0;
         }
         </style>
-        <title>Sebaran Cagar Budaya Tingkat Provinsi di Jawa Timur</title>
+        <title>Sebaran Cagar Budaya Peringkat Provinsi di Jawa Timur</title>
     </head>
     <body>
         <div id="map">
@@ -95,14 +95,14 @@
 				popup._contentNode.classList.remove('media');
 			}
 		}
-        var title = new L.Control({'position':'bottomright'});
+        var title = new L.Control({'position':'topright'});
         title.onAdd = function (map) {
             this._div = L.DomUtil.create('div', 'info');
             this.update();
             return this._div;
         };
         title.update = function () {
-            this._div.innerHTML = '<h2>Sebaran Cagar Budaya Tingkat Provinsi di Jawa Timur</h2>';
+            this._div.innerHTML = '<h2>Sebaran Cagar Budaya Peringkat Provinsi di Jawa Timur</h2>';
         };
         title.addTo(map);
         var abstract = new L.Control({'position':'topright'});
